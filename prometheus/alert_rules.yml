@@ -1,0 +1,11 @@
+groups:
+  - name: http-probe-alerts
+    rules:
+      - alert: HTTPStatusCodeMismatch
+        expr: probe_http_status_code{instance="Url"} != 200
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "HTTP Status Code Alert for {{ $labels.instance }}"
+          description: "The HTTP status code for the instance {{ $labels.instance }} is not 200. Current status code: {{ $value }}"
