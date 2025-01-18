@@ -12,6 +12,10 @@ This project sets up a monitoring stack using Docker Compose, consisting of:
 
 - Docker and Docker Compose installed on your system.
 - Basic understanding of Docker and monitoring concepts.
+- install loki plugin for log collection from container 
+   ```
+      docker plugin install grafana/loki-docker-driver:2.9.2 --alias loki --grant-all-permissions
+   ```
 
 ## Configuration Files
 
